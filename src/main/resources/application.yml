@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.107.27:23310/egame_network
+#    username: egame_network
+#    password: cpwmQSSFe07s
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.251.61:3306/egame_network
+    username: root
+    password: test11
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.251.52:3366/dbgirl
+#    username: root
+#    password: flaya
+  jpa:
+#    hibernate:
+#      ddl-auto: update
+    show-sql: true
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect   #不加这句则默认为myisam引擎
+    properties:
+      hibernate:
+        format_sql: true   #格式化sql
+#spring.jpa.properties.hibernate.format_sql: true   #格式化sql
+
+  redis:
+    #数据库索引
+    database: 0
+    host: 192.168.251.61
+    port: 6379
+    password:
+    jedis:
+      pool:
+        #最大连接数
+        max-active: 8
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: -1
+        #最大空闲
+        max-idle: 8
+        #最小空闲
+        min-idle: 0
+    #连接超时时间
+    timeout: 10000
+
+

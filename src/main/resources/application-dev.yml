@@ -1,0 +1,69 @@
+server:
+  port: 8082
+
+cupSize: E
+age: 17
+content: "cupSize: ${cupSize}, age: ${age}"
+
+girl:
+  cupSize: E
+  age: 17
+
+girl-info:
+  cupSize: G
+  age: 20
+
+rocketmq:
+  name-server: 192.168.251.221:9876
+  producer:
+    group: my-group
+    send-message-timeout: 300000
+
+# properties used in application code
+demo:
+  rocketmq:
+    orderTopic: heartbeat-topic-1
+    orderGroup: heartbeat-consumer-1
+    heartbeatTopic: heartbeat-topic
+    heartbeatGroup: heartbeat-consumer
+    oldHeartbeatTopic: heartbeat-topic-3
+    oldHeartbeatGroup: heartbeat-consumer-3
+
+#spring:
+#  application:
+#    name: dubbo-registry-zookeeper-provider-demo
+
+#demo:
+#  service:
+#    version: 1.0.0
+
+embedded:
+  zookeeper:
+    port: 2181
+
+dubbo:
+  application:
+      name: dubbo-registry-zookeeper-provider-demo2
+  registry:
+    address: zookeeper://192.168.251.221:2181?backup=192.168.251.124:2181,192.168.251.122:2181,192.168.251.11:2181
+
+#    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+
+multipart:
+  maxFileSize: 128KB
+  maxRequestSize: 128KB
+
+#spring:
+#  data:
+#    mongodb:
+#      custom:
+#        hosts: 192.168.251.61
+#        ports: 3400
+#        replica-set: mgset-3590061
+#        username: admin
+#        password: test11
+#        database: egame_cloud
+#        authentication-database: admin
+#        connections-per-host: 20
+#        min-connections-per-host: 20
+      
